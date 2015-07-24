@@ -2,9 +2,11 @@
 Gem version: 0.0.1
 
 Reporter for Spinach tests. This reports to console and into a file.
-File is saved under tmp/spinach_errors.txt
+File is saved under: 
 
-This is a reporter that meant to use on Jenkins, combined with (https://github.com/dblock/jenkins-ansicolor-plugin) to bring the color output to Jenkins console.
+    tmp/spinach_errors.txt
+    
+This code is based on spinach v0.4 output reporter.
 
 ## Installation
 
