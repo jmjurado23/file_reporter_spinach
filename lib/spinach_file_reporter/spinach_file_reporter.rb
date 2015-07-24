@@ -26,8 +26,9 @@ module Spinach
           file.puts @file_errors.uniq.join(' ')
           file.close
         else
-          File.delete("tmp/spinach.txt")
+          File.delete("tmp/spinach.txt") if File.file?("tmp/spinach.txt")
         end
+        super(success)
       end
 
       # Prints the feature name to the standard output
