@@ -1,1 +1,1 @@
-require_relative "file_reporter_spinach/file_reporter"
+require_relative "spinach_file_reporter/spinach_file_reporter"

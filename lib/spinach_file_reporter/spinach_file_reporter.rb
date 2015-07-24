@@ -22,7 +22,7 @@ module Spinach
 
       def after_run(success)
         if !success
-          file = File.new("tmp/spinach.txt", "w")
+          file = File.new("tmp/spinach_errors.txt", "w")
           file.puts @file_errors.uniq.join(' ')
           file.close
         else
