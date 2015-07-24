@@ -1,0 +1,1 @@
+require_relative "file_reporter_spinach/file_reporter"
