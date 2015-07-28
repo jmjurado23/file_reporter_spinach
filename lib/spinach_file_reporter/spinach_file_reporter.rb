@@ -26,7 +26,7 @@ module Spinach
           file.puts @file_errors.uniq.join(' ')
           file.close
         else
-          File.delete("tmp/spinach.txt") if File.file?("tmp/spinach.txt")
+          File.delete("tmp/spinach_spinach.txt") if File.file?("tmp/spinach_spinach.txt")
         end
         super(success)
       end
@@ -89,8 +89,7 @@ module Spinach
       def on_failed_step(step, failure, step_location, step_definitions = nil)
         output_step('✘', step, :red, step_location)
         self.scenario_error = [current_feature, current_scenario, step, failure]
-        feature = step_location[0].split( '/' ).last.split('.').first
-        @file_errors.push( "features/#{feature}.feature") if step_location
+        @file_errors.push "#{current_feature.filename}:#{current_scenario.line}"
         failed_steps << scenario_error
       end
 
@@ -104,8 +103,8 @@ module Spinach
       #
       def on_error_step(step, failure, step_location, step_definitions = nil)
         output_step('!', step, :red, step_location)
-        feature = step_location[0].split( '/' ).last.split('.').first
         self.scenario_error = [current_feature, current_scenario, step, failure]
+        @file_errors.push "#{current_feature.filename}:#{current_scenario.line}"
         error_steps << scenario_error
       end
 

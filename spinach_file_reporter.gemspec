@@ -3,7 +3,7 @@ require "spinach_file_reporter/gem_description"
 
 Gem::Specification.new do |s|
   s.name        = 'spinach_file_reporter'
-  s.version     = '0.0.1.2'
+  s.version     = '0.0.1.3'
   s.date        = '2015-07-24'
   s.summary     = 'Reporter for spinach with file output'
   s.description = Spinach::FileReporter::Reporter::GemDescription.to_s
